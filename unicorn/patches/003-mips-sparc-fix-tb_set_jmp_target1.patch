@@ -1,0 +1,65 @@
+--- a/qemu/include/exec/exec-all.h
++++ b/qemu/include/exec/exec-all.h
+@@ -263,8 +263,28 @@ static inline void tb_set_jmp_target1(uintptr_t jmp_addr, uintptr_t addr)
+     __asm __volatile__ ("swi 0x9f0002" : : "r" (_beg), "r" (_end), "r" (_flg));
+ #endif
+ }
+-#elif defined(__sparc__) || defined(__mips__)
+-void tb_set_jmp_target1(uintptr_t jmp_addr, uintptr_t addr);
++#elif defined(__sparc__)
++static inline void tb_set_jmp_target1(uintptr_t jmp_addr, uintptr_t addr)
++{
++    uint32_t *ptr = (uint32_t *)jmp_addr;
++    uintptr_t disp = addr - jmp_addr;
++
++    /* We can reach the entire address space for 32-bit.  For 64-bit
++       the code_gen_buffer can't be larger than 2GB.  */
++    assert(disp == (int32_t)disp);
++
++    *ptr = CALL | (uint32_t)disp >> 2;
++    flush_icache_range(jmp_addr, jmp_addr + 4);
++    __asm__ __volatile__("flush\t%0" : : "r" (jmp_addr & -8));
++}
++#elif defined(__mips__)
++#include <sys/cachectl.h>
++static inline void tb_set_jmp_target1(uintptr_t jmp_addr, uintptr_t addr)
++{
++    uint32_t *ptr = (uint32_t *)jmp_addr;
++    *ptr = deposit32(*ptr, 0, 26, addr >> 2);
++    cacheflush((void *)jmp_addr, 4, ICACHE);
++}
+ #else
+ #error tb_set_jmp_target1 is missing
+ #endif
+--- a/qemu/tcg/mips/tcg-target.c
++++ b/qemu/tcg/mips/tcg-target.c
+@@ -1807,10 +1807,3 @@ static void tcg_target_init(TCGContext *s)
+ 
+     tcg_add_target_add_op_defs(s, mips_op_defs);
+ }
+-
+-void tb_set_jmp_target1(uintptr_t jmp_addr, uintptr_t addr)
+-{
+-    uint32_t *ptr = (uint32_t *)jmp_addr;
+-    *ptr = deposit32(*ptr, 0, 26, addr >> 2);
+-    flush_icache_range(jmp_addr, jmp_addr + 4);
+-}
+--- a/qemu/tcg/sparc/tcg-target.c
++++ b/qemu/tcg/sparc/tcg-target.c
+@@ -1598,16 +1598,3 @@ static void tcg_target_init(TCGContext *s)
+ # define ELF_HOST_MACHINE  EM_SPARC32PLUS
+ # define ELF_HOST_FLAGS    EF_SPARC_32PLUS
+ #endif
+-
+-void tb_set_jmp_target1(uintptr_t jmp_addr, uintptr_t addr)
+-{
+-    uint32_t *ptr = (uint32_t *)jmp_addr;
+-    uintptr_t disp = addr - jmp_addr;
+-
+-    /* We can reach the entire address space for 32-bit.  For 64-bit
+-       the code_gen_buffer can't be larger than 2GB.  */
+-    assert(disp == (int32_t)disp);
+-
+-    *ptr = CALL | (uint32_t)disp >> 2;
+-    flush_icache_range(jmp_addr, jmp_addr + 4);
+-}

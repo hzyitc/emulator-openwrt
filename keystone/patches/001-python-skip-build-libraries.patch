@@ -1,0 +1,13 @@
+--- a/bindings/python/setup.py
++++ b/bindings/python/setup.py
+@@ -134,8 +134,8 @@ class sdist(_sdist):
+ 
+ class build(_build):
+     def run(self):
+-        log.info("Building C++ extensions")
+-        build_libraries()
++        # log.info("Building C++ extensions")
++        # build_libraries()
+         return _build.run(self)
+ 
+ class develop(_develop):

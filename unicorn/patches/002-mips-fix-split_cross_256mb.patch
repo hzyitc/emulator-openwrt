@@ -1,0 +1,29 @@
+--- a/qemu/translate-all.c
++++ b/qemu/translate-all.c
+@@ -612,7 +612,7 @@ static inline void *alloc_code_gen_buffer(struct uc_struct *uc)
+     void *buf = static_code_gen_buffer;
+ #ifdef __mips__
+     if (cross_256mb(buf, tcg_ctx->code_gen_buffer_size)) {
+-        buf = split_cross_256mb(buf, tcg_ctx->code_gen_buffer_size);
++        buf = split_cross_256mb(uc, buf, tcg_ctx->code_gen_buffer_size);
+     }
+ #endif
+     map_exec(buf, tcg_ctx->code_gen_buffer_size);
+@@ -688,7 +688,7 @@ static inline void *alloc_code_gen_buffer(struct uc_struct *uc)
+         }
+ 
+         /* Split the original buffer.  Free the smaller half.  */
+-        buf2 = split_cross_256mb(buf, size1);
++        buf2 = split_cross_256mb(uc, buf, size1);
+         size2 = tcg_ctx->code_gen_buffer_size;
+         munmap(buf + (buf == buf2 ? size2 : 0), size1 - size2);
+         return buf2;
+@@ -725,7 +725,7 @@ static inline void *alloc_code_gen_buffer(struct uc_struct *uc)
+             /* Failure.  Work with what we had.  Since this is malloc
+                and not mmap, we can't free the other half.  */
+             free(buf2);
+-            buf = split_cross_256mb(buf, tcg_ctx->code_gen_buffer_size);
++            buf = split_cross_256mb(uc, buf, tcg_ctx->code_gen_buffer_size);
+         }
+     }
+ #endif
