@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -261,7 +261,7 @@ else()
+         -D_FILE_OFFSET_BITS=64
+         -D_LARGEFILE_SOURCE
+         -Wall -O2
+-        -fPIC -fpic -fvisibility=hidden
++        -fPIC -fvisibility=hidden
+     )
+ endif()
+ 

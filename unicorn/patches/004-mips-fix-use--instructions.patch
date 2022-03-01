@@ -1,0 +1,48 @@
+--- a/qemu/tcg/mips/tcg-target.c
++++ b/qemu/tcg/mips/tcg-target.c
+@@ -1661,18 +1661,6 @@ static int tcg_target_callee_save_regs[] = {
+ 
+ #include <signal.h>
+ 
+-#ifndef use_movnz_instructions
+-bool use_movnz_instructions = false;
+-#endif
+-
+-#ifndef use_mips32_instructions
+-bool use_mips32_instructions = false;
+-#endif
+-
+-#ifndef use_mips32r2_instructions
+-bool use_mips32r2_instructions = false;
+-#endif
+-
+ static volatile sig_atomic_t got_sigill;
+ 
+ static void sigill_handler(int signo, siginfo_t *si, void *data)
+--- a/qemu/tcg/mips/tcg-target.h
++++ b/qemu/tcg/mips/tcg-target.h
+@@ -78,21 +78,21 @@ typedef enum {
+     defined(_MIPS_ARCH_MIPS4)
+ #define use_movnz_instructions  1
+ #else
+-extern bool use_movnz_instructions;
++static bool use_movnz_instructions = false;
+ #endif
+ 
+ /* MIPS32 instruction set detection */
+ #if defined(__mips_isa_rev) && (__mips_isa_rev >= 1)
+ #define use_mips32_instructions  1
+ #else
+-extern bool use_mips32_instructions;
++static bool use_mips32_instructions = false;
+ #endif
+ 
+ /* MIPS32R2 instruction set detection */
+ #if defined(__mips_isa_rev) && (__mips_isa_rev >= 2)
+ #define use_mips32r2_instructions  1
+ #else
+-extern bool use_mips32r2_instructions;
++static bool use_mips32r2_instructions = false;
+ #endif
+ 
+ /* optional instructions */
