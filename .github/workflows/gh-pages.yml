@@ -1,0 +1,38 @@
+name: Auto update gh-pages
+on: 
+  push:
+
+jobs:
+  gh-pages:
+    name: Update gh-pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: 'pages'
+        
+      - name: Checkout gh-pages
+        uses: actions/checkout@v2
+        with:
+          path: 'gh-pages'
+          ref: 'gh-pages'
+          fetch-depth: 2
+      
+      - name: Update
+        run: |
+          cd gh-pages
+          git reset --hard HEAD~1
+          cp -avr ../pages/* ./
+
+      - name: Publish
+        run: |
+          cd gh-pages
+
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          git add .
+          git commit -m "Add: page"
+          git push -f origin gh-pages
