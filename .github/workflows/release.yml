@@ -16,9 +16,9 @@ jobs:
           # - master
           # - ''
         arch:
-          - aarch64_cortex-a53
+          # - aarch64_cortex-a53
           # - aarch64_cortex-a72
-          # - aarch64_generic
+          - aarch64_generic
           # # - arc_arc700
           # # - arc_archs
           # - arm_arm1176jzf-s_vfp
@@ -34,8 +34,8 @@ jobs:
           # - arm_fa526
           # - arm_mpcore
           # - arm_xscale
-          # - i386_pentium-mmx
-          # - i386_pentium4
+          - i386_pentium-mmx
+          - i386_pentium4
           # - mips64_octeonplus
           - mips_24kc
           # - mips_4kec
@@ -54,8 +54,8 @@ jobs:
       - name: Build
         uses: openwrt/gh-action-sdk@v3
         env:
-          KEY_BUILD: ${{ secrets.KEY_BUILD }}
           ARCH: ${{ matrix.arch }}${{ matrix.branch && format('-{0}', matrix.branch) || ''}}
+          KEY_BUILD: ${{ secrets.KEY_BUILD }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
@@ -73,18 +73,19 @@ jobs:
       fail-fast: false
       matrix:
         branch:
+          - 18.06.7
           - openwrt-19.07
           - openwrt-21.02
           - master
         arch:
-          - aarch64_cortex-a53
-          # - aarch64_generic
+          # - aarch64_cortex-a53
+          - aarch64_generic
           # - arm_cortex-a15_neon-vfpv4
           # - arm_cortex-a9_vfpv3-d16
           # # - armvirt-32
           # # - armvirt-64
-          # - i386_pentium-mmx
-          # - i386_pentium4
+          - i386_pentium-mmx
+          - i386_pentium4
           # # - malta-be
           - mips_24kc
           # # - x86-64
