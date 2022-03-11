@@ -1,0 +1,158 @@
+Package: keystone
+Version: 0.9.2-1
+Depends: libc, libstdcpp6
+License: GPL-2.0 License
+Section: libs
+Architecture: mips_mips32
+Installed-Size: 1428541
+Filename: keystone_0.9.2-1_mips_mips32.ipk
+Size: 1369101
+SHA256sum: 5d65325dd1573bfb00098eab716a4bbb221adb19104a39bf23693b6b9eef5e56
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+
+Package: python3-androidnativeemu-src
+Version: master-20220306-1
+Depends: libc
+License: GPL-3.0 License
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 30137
+Filename: python3-androidnativeemu-src_master-20220306-1_mips_mips32.ipk
+Size: 30944
+SHA256sum: c577286b6740b7f66b304794865e1e0f73495e6dd1ade724a1118740ccbfb9c5
+Description:  Allows you to partly emulate an Android native library.
+ 
+ This package contains the Python source files for python3-androidnativeemu.
+
+Package: python3-androidnativeemu
+Version: master-20220306-1
+Depends: libc, python3-light, python3-unicorn, python3-pyelftools, python3-hexdump, python3-keystone
+License: GPL-3.0 License
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 81191
+Filename: python3-androidnativeemu_master-20220306-1_mips_mips32.ipk
+Size: 82178
+SHA256sum: 9a04512dcef9204624cdd556c54e846eb5db19133a7e308c7d5bc1765f287d33
+Description:  Allows you to partly emulate an Android native library.
+
+Package: python3-hexdump-src
+Version: 3.3-1
+Depends: libc
+License: Public Domain
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 5249
+Filename: python3-hexdump-src_3.3-1_mips_mips32.ipk
+Size: 6047
+SHA256sum: 9dd2619a57c300e0d6b9df915ba688d245169e9beed8a0aae15b2cef3c7a2a2d
+Description:  Dump binary data to hex format and restore from there
+ 
+ This package contains the Python source files for python3-hexdump.
+
+Package: python3-hexdump
+Version: 3.3-1
+Depends: libc, python3-light
+License: Public Domain
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 10621
+Filename: python3-hexdump_3.3-1_mips_mips32.ipk
+Size: 11494
+SHA256sum: dc4a38bae9a8d1edb065a6b925dba50c142de987397bbbeeab80847d326dfa2c
+Description:  Dump binary data to hex format and restore from there
+
+Package: python3-keystone-src
+Version: 0.9.2-1
+Depends: libc
+License: GPL-2.0 License
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 3973
+Filename: python3-keystone-src_0.9.2-1_mips_mips32.ipk
+Size: 4800
+SHA256sum: 4221db15443e73b7c612b2672586c24a5dba50829f10710ef20574e39b228315
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library.
+ 
+ This package contains the Python source files for python3-keystone.
+
+Package: python3-keystone
+Version: 0.9.2-1
+Depends: libc, keystone, python3-light, python3-ctypes, python3-distutils
+License: GPL-2.0 License
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 10027
+Filename: python3-keystone_0.9.2-1_mips_mips32.ipk
+Size: 10972
+SHA256sum: 00e4dfda02f547bb7067aa585791dfbc8d8c601cc364bb66cfdea3be38441176
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library.
+
+Package: python3-pyelftools-src
+Version: 0.28-1
+Depends: libc
+License: Public Domain
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 131631
+Filename: python3-pyelftools-src_0.28-1_mips_mips32.ipk
+Size: 132589
+SHA256sum: df593216e33131aa9546d999c0f4068558f8c517844fee33cc38d4aa4fcbaa62
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
+ 
+ This package contains the Python source files for python3-pyelftools.
+
+Package: python3-pyelftools
+Version: 0.28-1
+Depends: libc, python3-light, python3-logging
+License: Public Domain
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 285134
+Filename: python3-pyelftools_0.28-1_mips_mips32.ipk
+Size: 286059
+SHA256sum: 46822f6d71908c2bc7d64de4b271873f4b42485a31422ede30dc9ff9964ff489
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
+
+Package: python3-unicorn-src
+Version: 1.0.3-1
+Depends: libc
+License: GPL-2.0 License
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 20437
+Filename: python3-unicorn-src_1.0.3-1_mips_mips32.ipk
+Size: 20919
+SHA256sum: 479b673f060332efacad806c718d0040449ceda1fa3757efe2401e6b2828eb7e
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library.
+ 
+ This package contains the Python source files for python3-unicorn.
+
+Package: python3-unicorn
+Version: 1.0.3-1
+Depends: libc, unicorn, python3-light, python3-ctypes, python3-distutils, python3-pkg-resources
+License: GPL-2.0 License
+Section: lang
+Architecture: mips_mips32
+Installed-Size: 52205
+Filename: python3-unicorn_1.0.3-1_mips_mips32.ipk
+Size: 47970
+SHA256sum: 0653754afd1cc1146ac90a4a10311780d26a97198d3045a46f3165c5a87b069c
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library.
+
+Package: unicorn
+Version: 1.0.3-1
+Depends: libc
+License: GPL-2.0 License
+Section: libs
+Architecture: mips_mips32
+Installed-Size: 3619999
+Filename: unicorn_1.0.3-1_mips_mips32.ipk
+Size: 3587002
+SHA256sum: d46b3df1461920648d6fbecc88d21bfaf5627f50e4584e62b60b8a876d1ba316
+Description:  Allows you to partly emulate an Android native library.
+

@@ -1,0 +1,158 @@
+Package: keystone
+Version: 0.9.2-1
+Depends: libc, libstdcpp6
+License: GPL-2.0 License
+Section: libs
+Architecture: arm_cortex-a7
+Installed-Size: 1290140
+Filename: keystone_0.9.2-1_arm_cortex-a7.ipk
+Size: 1236695
+SHA256sum: a5b8024a1718a930e8aeea9c7fa25d2fef796aeeb3a3f7a2feb842bf6d9a34de
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+
+Package: python3-androidnativeemu-src
+Version: master-20220306-1
+Depends: libc
+License: GPL-3.0 License
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 30137
+Filename: python3-androidnativeemu-src_master-20220306-1_arm_cortex-a7.ipk
+Size: 30946
+SHA256sum: cdc3301558c1847179079601914668a3551fb6a3cfbf6e1802ccdde2e7be7f03
+Description:  Allows you to partly emulate an Android native library.
+ 
+ This package contains the Python source files for python3-androidnativeemu.
+
+Package: python3-androidnativeemu
+Version: master-20220306-1
+Depends: libc, python3-light, python3-unicorn, python3-pyelftools, python3-hexdump, python3-keystone
+License: GPL-3.0 License
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 81191
+Filename: python3-androidnativeemu_master-20220306-1_arm_cortex-a7.ipk
+Size: 82176
+SHA256sum: e26cc689f98b3e07ce3a13b71f1886257300bb05c3e83a6b3e8a31266575b936
+Description:  Allows you to partly emulate an Android native library.
+
+Package: python3-hexdump-src
+Version: 3.3-1
+Depends: libc
+License: Public Domain
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 5249
+Filename: python3-hexdump-src_3.3-1_arm_cortex-a7.ipk
+Size: 6054
+SHA256sum: 60d6bfd19ed6f29faa68772f8143095ddcc32265bb7019da399811df2ddd7233
+Description:  Dump binary data to hex format and restore from there
+ 
+ This package contains the Python source files for python3-hexdump.
+
+Package: python3-hexdump
+Version: 3.3-1
+Depends: libc, python3-light
+License: Public Domain
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 10621
+Filename: python3-hexdump_3.3-1_arm_cortex-a7.ipk
+Size: 11492
+SHA256sum: 3a535f0e4bb867be7ee4197381967b16d426f616e65da5e8bf0bc8222111cdb0
+Description:  Dump binary data to hex format and restore from there
+
+Package: python3-keystone-src
+Version: 0.9.2-1
+Depends: libc
+License: GPL-2.0 License
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 3973
+Filename: python3-keystone-src_0.9.2-1_arm_cortex-a7.ipk
+Size: 4807
+SHA256sum: ed5c46716926b60af2365b4f2700e1a7753b8be8cd927c89125f301f833207dc
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library.
+ 
+ This package contains the Python source files for python3-keystone.
+
+Package: python3-keystone
+Version: 0.9.2-1
+Depends: libc, keystone, python3-light, python3-ctypes, python3-distutils
+License: GPL-2.0 License
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 10027
+Filename: python3-keystone_0.9.2-1_arm_cortex-a7.ipk
+Size: 10973
+SHA256sum: 39c1b2554d50db07805ac57d947a582ed4eb103f39ce6047f83e91604287da15
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library.
+
+Package: python3-pyelftools-src
+Version: 0.28-1
+Depends: libc
+License: Public Domain
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 131631
+Filename: python3-pyelftools-src_0.28-1_arm_cortex-a7.ipk
+Size: 132594
+SHA256sum: a23e88acd8f34b3f58313f3464c7f5783a63e30da4b3f993fcef459ba3d99ed5
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
+ 
+ This package contains the Python source files for python3-pyelftools.
+
+Package: python3-pyelftools
+Version: 0.28-1
+Depends: libc, python3-light, python3-logging
+License: Public Domain
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 285134
+Filename: python3-pyelftools_0.28-1_arm_cortex-a7.ipk
+Size: 286057
+SHA256sum: c5c8e85e4db57790209cdcd02e26023fcc46ab0b71fd6d29aa8ba55bbb8167ff
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
+
+Package: python3-unicorn-src
+Version: 1.0.3-1
+Depends: libc
+License: GPL-2.0 License
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 20437
+Filename: python3-unicorn-src_1.0.3-1_arm_cortex-a7.ipk
+Size: 20919
+SHA256sum: 47e343852fb48ef3598455b6535a58e465cb3e58e0a3a640f2361f58924abb70
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library.
+ 
+ This package contains the Python source files for python3-unicorn.
+
+Package: python3-unicorn
+Version: 1.0.3-1
+Depends: libc, unicorn, python3-light, python3-ctypes, python3-distutils, python3-pkg-resources
+License: GPL-2.0 License
+Section: lang
+Architecture: arm_cortex-a7
+Installed-Size: 52205
+Filename: python3-unicorn_1.0.3-1_arm_cortex-a7.ipk
+Size: 47964
+SHA256sum: e383b3d9aaf9e385bb2bd9d24e0a414f81b7af5c066c5b0844c6f3cbe0d035fc
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library.
+
+Package: unicorn
+Version: 1.0.3-1
+Depends: libc
+License: GPL-2.0 License
+Section: libs
+Architecture: arm_cortex-a7
+Installed-Size: 3406708
+Filename: unicorn_1.0.3-1_arm_cortex-a7.ipk
+Size: 3375931
+SHA256sum: 0867452ca013aece4db5e0765a317db1632f1005fc20aedd5c4ddb95f84db171
+Description:  Allows you to partly emulate an Android native library.
+

@@ -1,0 +1,218 @@
+Package: keystone
+Version: 0.9.2-1
+Depends: libc, libstdcpp6
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/keystone
+SourceName: keystone
+License: GPL-2.0 License
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1647023662
+Maintainer: keystone-engine
+Architecture: mips_4kec
+Installed-Size: 1427213
+Filename: keystone_0.9.2-1_mips_4kec.ipk
+Size: 1367626
+SHA256sum: 76c1decb97daaf41c7fbc77d44c028f8b2c30bb660deb00e84fcd38989c54140
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+
+Package: python3-androidnativeemu-src
+Version: master-20220306-1
+Depends: libc
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/python3-androidnativeemu
+SourceName: python3-androidnativeemu-src
+License: GPL-3.0 License
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: AeonLucid
+Architecture: mips_4kec
+Installed-Size: 30137
+Filename: python3-androidnativeemu-src_master-20220306-1_mips_4kec.ipk
+Size: 30937
+SHA256sum: 77e0bbdf37e966e0781cf23f1edc38a41ab114c7fe6d93fbaa197cd75143bfa2
+Description:  Allows you to partly emulate an Android native library.
+ 
+ This package contains the Python source files for python3-androidnativeemu.
+
+Package: python3-androidnativeemu
+Version: master-20220306-1
+Depends: libc, python3-light, python3-unicorn, python3-pyelftools, python3-hexdump, python3-keystone
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/python3-androidnativeemu
+SourceName: python3-androidnativeemu
+License: GPL-3.0 License
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: AeonLucid
+Architecture: mips_4kec
+Installed-Size: 81191
+Filename: python3-androidnativeemu_master-20220306-1_mips_4kec.ipk
+Size: 82169
+SHA256sum: f23586f6ec0531f079acb889c8ac6c516ee69cb5fb91884823fe925124211622
+Description:  Allows you to partly emulate an Android native library.
+
+Package: python3-hexdump-src
+Version: 3.3-1
+Depends: libc
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/python3-hexdump
+SourceName: python3-hexdump-src
+License: Public Domain
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: techtonik
+Architecture: mips_4kec
+Installed-Size: 5249
+Filename: python3-hexdump-src_3.3-1_mips_4kec.ipk
+Size: 6055
+SHA256sum: d50d0b1bebf1bbe6ec3ce332eb88b5d4663a7d42d3360ef5b6b1ed22ec4572b5
+Description:  Dump binary data to hex format and restore from there
+ 
+ This package contains the Python source files for python3-hexdump.
+
+Package: python3-hexdump
+Version: 3.3-1
+Depends: libc, python3-light
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/python3-hexdump
+SourceName: python3-hexdump
+License: Public Domain
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: techtonik
+Architecture: mips_4kec
+Installed-Size: 10621
+Filename: python3-hexdump_3.3-1_mips_4kec.ipk
+Size: 11496
+SHA256sum: 508cb96fa6122d49334ca73d101ac45bacba5305f23181bafd42109618f0caa1
+Description:  Dump binary data to hex format and restore from there
+
+Package: python3-keystone-src
+Version: 0.9.2-1
+Depends: libc
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/keystone
+SourceName: python3-keystone-src
+License: GPL-2.0 License
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: keystone-engine
+Architecture: mips_4kec
+Installed-Size: 3973
+Filename: python3-keystone-src_0.9.2-1_mips_4kec.ipk
+Size: 4800
+SHA256sum: 2da5cf18d646f0174eee75612b75b73000ae8af7da5afba1f639cbd3981c025c
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library.
+ 
+ This package contains the Python source files for python3-keystone.
+
+Package: python3-keystone
+Version: 0.9.2-1
+Depends: libc, keystone, python3-light, python3-ctypes, python3-distutils
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/keystone
+SourceName: python3-keystone
+License: GPL-2.0 License
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: keystone-engine
+Architecture: mips_4kec
+Installed-Size: 10027
+Filename: python3-keystone_0.9.2-1_mips_4kec.ipk
+Size: 10966
+SHA256sum: 2dce736eee0179ce2e1707a98daa9a74207e81a6164ed20139ddc71407418afd
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library.
+
+Package: python3-pyelftools-src
+Version: 0.28-1
+Depends: libc
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/python3-pyelftools
+SourceName: python3-pyelftools-src
+License: Public Domain
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: eliben
+Architecture: mips_4kec
+Installed-Size: 131631
+Filename: python3-pyelftools-src_0.28-1_mips_4kec.ipk
+Size: 132590
+SHA256sum: b1f81b7d7a8986f9ece53020112d24ae3bb69274f7dc391ba0da8d0b8feb51f3
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
+ 
+ This package contains the Python source files for python3-pyelftools.
+
+Package: python3-pyelftools
+Version: 0.28-1
+Depends: libc, python3-light, python3-logging
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/python3-pyelftools
+SourceName: python3-pyelftools
+License: Public Domain
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: eliben
+Architecture: mips_4kec
+Installed-Size: 285134
+Filename: python3-pyelftools_0.28-1_mips_4kec.ipk
+Size: 286054
+SHA256sum: 3db6957d71de23910101eb40b09fe97bac7ea04a900d77ded7c8360bbeb1e078
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
+
+Package: python3-unicorn-src
+Version: 1.0.3-1
+Depends: libc
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/unicorn
+SourceName: python3-unicorn-src
+License: GPL-2.0 License
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: unicorn-engine
+Architecture: mips_4kec
+Installed-Size: 20437
+Filename: python3-unicorn-src_1.0.3-1_mips_4kec.ipk
+Size: 20918
+SHA256sum: 278970c78850112f6702ef988bf8ef2fa7ec0e605a5fef47f6641b186f0fd1c0
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library.
+ 
+ This package contains the Python source files for python3-unicorn.
+
+Package: python3-unicorn
+Version: 1.0.3-1
+Depends: libc, unicorn, python3-light, python3-ctypes, python3-distutils, python3-pkg-resources
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/unicorn
+SourceName: python3-unicorn
+License: GPL-2.0 License
+LicenseFiles: LICENSE
+Section: lang
+SourceDateEpoch: 1647023662
+Maintainer: unicorn-engine
+Architecture: mips_4kec
+Installed-Size: 52205
+Filename: python3-unicorn_1.0.3-1_mips_4kec.ipk
+Size: 47967
+SHA256sum: feff8c92a3f46a9412a1b050bfec7292f919975a6f38cb24d245e61f11cff574
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library.
+
+Package: unicorn
+Version: 1.0.3-1
+Depends: libc
+Source: /home/runner/work/emulator-openwrt/emulator-openwrt/unicorn
+SourceName: unicorn
+License: GPL-2.0 License
+LicenseFiles: LICENSE
+Section: libs
+SourceDateEpoch: 1647023662
+Maintainer: unicorn-engine
+Architecture: mips_4kec
+Installed-Size: 3543883
+Filename: unicorn_1.0.3-1_mips_4kec.ipk
+Size: 3511416
+SHA256sum: ba3150c310a7d6a8f4e9fa63b5941732c2efb84043ca72d3f600005eeb128236
+Description:  Allows you to partly emulate an Android native library.
+
