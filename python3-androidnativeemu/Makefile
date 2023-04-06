@@ -2,14 +2,12 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-androidnativeemu
 # PKG_VERSION:=0.0.2
-PKG_VERSION:=master-20220306
 PKG_RELEASE:=$(AUTORELEASE)
 
 # PYPI_NAME:=androidemu
 # PKG_HASH:=d7253b4e09d372cb7d08f8da047b6d73d28d9ee52078bb72f6db638d53dd062e
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE:=AndroidNativeEmu-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/AeonLucid/AndroidNativeEmu.git
 PKG_SOURCE_DATE:=2022-03-14
 PKG_SOURCE_VERSION:=10da9bb9b6f7a12641f87ab09c08fdc045bacbc7
