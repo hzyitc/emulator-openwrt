@@ -14,17 +14,13 @@ echo "::endgroup::"
 # wget -O /etc/opkg/keys/5283357d535bca85 https://hzyitc.github.io/emulator-openwrt/5283357d535bca85
 # echo "src/gz emulator https://hzyitc.github.io/emulator-openwrt/$OPENWRT_ARCH" >>/etc/opkg/customfeeds.conf
 
-cp /ci/5283357d535bca85 /etc/opkg/keys
+cp /ci/5283357d535bca85 /etc/opkg/keys/
 echo "src/gz emulator file:///ci" >>/etc/opkg/customfeeds.conf
 
 echo "::group::Install python3-androidnativeemu"
 opkg update
 opkg install python3-androidnativeemu
 echo "::endgroup::"
-
-sed -i 's/#print/print/' /usr/lib/python3/site-packages/keystone/keystone.py
-ls -alh /usr/lib/
-file /usr/lib/libkeystone.so.0
 
 echo "::group::Clone"
 git clone https://github.com/AeonLucid/AndroidNativeEmu
