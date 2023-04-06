@@ -4,9 +4,9 @@ PKG_NAME:=unicorn
 PKG_VERSION:=1.0.3
 PKG_RELEASE:=$(AUTORELEASE)
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/unicorn-engine/unicorn/tar.gz/${PKG_VERSION}?
-PKG_HASH:=64fba177dec64baf3f11c046fbb70e91483e029793ec6a3e43b028ef14dc0d65
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/unicorn-engine/unicorn.git
+PKG_SOURCE_VERSION:=52f90cda023abaca510d59f021c88629270ad6c0
 
 PKG_MAINTAINER:=unicorn-engine
 PKG_LICENSE:=GPL-2.0 License

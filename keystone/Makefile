@@ -4,9 +4,9 @@ PKG_NAME:=keystone
 PKG_VERSION:=0.9.2
 PKG_RELEASE:=$(AUTORELEASE)
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/keystone-engine/keystone/tar.gz/${PKG_VERSION}?
-PKG_HASH:=c9b3a343ed3e05ee168d29daf89820aff9effb2c74c6803c2d9e21d55b5b7c24
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/keystone-engine/keystone.git
+PKG_SOURCE_VERSION:=dc7932ef2b2c4a793836caec6ecab485005139d6
 
 PKG_MAINTAINER:=keystone-engine
 PKG_LICENSE:=GPL-2.0 License
