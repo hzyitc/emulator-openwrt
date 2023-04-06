@@ -8,7 +8,7 @@ PKG_RELEASE:=$(AUTORELEASE)
 # PYPI_NAME:=androidemu
 # PKG_HASH:=d7253b4e09d372cb7d08f8da047b6d73d28d9ee52078bb72f6db638d53dd062e
 
-git_ref:=36b4a60dd3656bddcf3a2568077db137f0a60a7f
+git_ref:=10da9bb9b6f7a12641f87ab09c08fdc045bacbc7
 PKG_SOURCE:=AndroidNativeEmu-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/AeonLucid/AndroidNativeEmu/tar.gz/$(git_ref)?
 PKG_HASH:=0ca872ce2ff0715e4a04cb89141d252615c804c6977ede30bf3ba08bb7129fb6
