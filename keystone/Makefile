@@ -4,9 +4,9 @@ PKG_NAME:=keystone
 PKG_VERSION:=0.9.2
 PKG_RELEASE:=$(AUTORELEASE)
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/keystone-engine/keystone/tar.gz/${PKG_VERSION}?
-PKG_HASH:=c9b3a343ed3e05ee168d29daf89820aff9effb2c74c6803c2d9e21d55b5b7c24
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/keystone-engine/keystone.git
+PKG_SOURCE_VERSION:=dc7932ef2b2c4a793836caec6ecab485005139d6
 
 PKG_MAINTAINER:=keystone-engine
 PKG_LICENSE:=GPL-2.0 License
@@ -17,8 +17,7 @@ CMAKE_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
-# include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-include ../python3-crossver-package.mk
+include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 CMAKE_OPTIONS+= \
 	-DBUILD_LIBS_ONLY=ON \
@@ -51,6 +50,11 @@ define Package/python3-keystone/description
   This package contains Python 3 bindings for the keystone library.
 endef
 
+define Build/Compile
+	$(call Build/Compile/Default)
+	$(call Py3Build/Compile)
+endef
+
 define Package/keystone/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libkeystone.so* $(1)/usr/lib/
@@ -69,6 +73,6 @@ endef
 
 $(eval $(call BuildPackage,keystone))
 
-$(eval $(call Py3CrossVerPackage,python3-keystone))
+$(eval $(call Py3Package,python3-keystone))
 $(eval $(call BuildPackage,python3-keystone))
 $(eval $(call BuildPackage,python3-keystone-src))

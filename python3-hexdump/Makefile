@@ -17,8 +17,7 @@ PYTHON3_PKG_SETUP_ARGS:=
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
-# include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-include ../python3-crossver-package.mk
+include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 define Package/python3-hexdump
   SECTION:=lang
@@ -29,10 +28,14 @@ define Package/python3-hexdump
   DEPENDS:=+python3-light
 endef
 
-define Package/python3-pyelftools/description
+define Package/python3-hexdump/description
   Dump binary data to hex format and restore from there.
 endef
 
-$(eval $(call Py3CrossVerPackage,python3-hexdump))
+define Build/Compile
+	$(call Py3Build/Compile)
+endef
+
+$(eval $(call Py3Package,python3-hexdump))
 $(eval $(call BuildPackage,python3-hexdump))
 $(eval $(call BuildPackage,python3-hexdump-src))

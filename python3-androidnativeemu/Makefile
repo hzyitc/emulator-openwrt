@@ -2,6 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python3-androidnativeemu
 # PKG_VERSION:=0.0.2
+PKG_VERSION:=master-20220306
 PKG_RELEASE:=$(AUTORELEASE)
 
 # PYPI_NAME:=androidemu
@@ -19,8 +20,7 @@ PKG_LICENSE_FILES:=LICENSE
 
 # include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
-# include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-include ../python3-crossver-package.mk
+include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 define Package/python3-androidnativeemu
   SECTION:=lang
@@ -35,12 +35,16 @@ define Package/python3-androidnativeemu/description
   Allows you to partly emulate an Android native library.
 endef
 
+define Build/Compile
+	$(call Py3Build/Compile)
+endef
+
 # AndroidNativeEmu contains some Android libraries
 # So we need to skip denpendency check for libraries
 define CheckDependencies
   true
 endef
 
-$(eval $(call Py3CrossVerPackage,python3-androidnativeemu))
+$(eval $(call Py3Package,python3-androidnativeemu))
 $(eval $(call BuildPackage,python3-androidnativeemu))
 $(eval $(call BuildPackage,python3-androidnativeemu-src))

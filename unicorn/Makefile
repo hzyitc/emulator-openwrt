@@ -4,9 +4,9 @@ PKG_NAME:=unicorn
 PKG_VERSION:=1.0.3
 PKG_RELEASE:=$(AUTORELEASE)
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/unicorn-engine/unicorn/tar.gz/${PKG_VERSION}?
-PKG_HASH:=64fba177dec64baf3f11c046fbb70e91483e029793ec6a3e43b028ef14dc0d65
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/unicorn-engine/unicorn.git
+PKG_SOURCE_VERSION:=52f90cda023abaca510d59f021c88629270ad6c0
 
 PKG_MAINTAINER:=unicorn-engine
 PKG_LICENSE:=GPL-2.0 License
@@ -18,12 +18,13 @@ CMAKE_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
-# include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-include ../python3-crossver-package.mk
+include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 PYTHON3_PKG_SETUP_DIR:=bindings/python/
 PYTHON3_PKG_SETUP_VARS+= \
   LIBUNICORN_PATH=/usr/lib
+
+PYTHON3_PKG_SETUP_DIR:=bindings/python/
 
 define Package/unicorn
   SECTION:=libs
@@ -49,6 +50,11 @@ define Package/python3-unicorn/description
   This package contains Python 3 bindings for the unicorn library.
 endef
 
+define Build/Compile
+	$(call Build/Compile/Default)
+	$(call Py3Build/Compile)
+endef
+
 define Package/unicorn/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libunicorn.so* $(1)/usr/lib/
@@ -65,6 +71,6 @@ endef
 
 $(eval $(call BuildPackage,unicorn))
 
-$(eval $(call Py3CrossVerPackage,python3-unicorn))
+$(eval $(call Py3Package,python3-unicorn))
 $(eval $(call BuildPackage,python3-unicorn))
 $(eval $(call BuildPackage,python3-unicorn-src))

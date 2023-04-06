@@ -13,8 +13,7 @@ PKG_LICENSE_FILES:=LICENSE
 
 include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
-# include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-include ../python3-crossver-package.mk
+include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 define Package/python3-pyelftools
   SECTION:=lang
@@ -29,6 +28,10 @@ define Package/python3-pyelftools/description
   pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
 endef
 
-$(eval $(call Py3CrossVerPackage,python3-pyelftools))
+define Build/Compile
+	$(call Py3Build/Compile)
+endef
+
+$(eval $(call Py3Package,python3-pyelftools))
 $(eval $(call BuildPackage,python3-pyelftools))
 $(eval $(call BuildPackage,python3-pyelftools-src))
