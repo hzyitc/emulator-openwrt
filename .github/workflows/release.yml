@@ -5,47 +5,47 @@ on:
 
 jobs:
   build:
-    name: Build for ${{ matrix.branch && format('{0}-', matrix.branch) || ''}}${{ matrix.arch }}
+    name: Build / ${{ matrix.branch }} / ${{ matrix.arch }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         branch:
-          # - openwrt-19.07
+          - openwrt-19.07
           - openwrt-21.02
-          # - master
-          # - ''
+          - master
+          # - snapshot
         arch:
-          - aarch64_cortex-a53
-          - aarch64_cortex-a72
+          # - aarch64_cortex-a53
+          # - aarch64_cortex-a72
           - aarch64_generic
-          # - arc_arc700
-          # - arc_archs
-          - arm_arm1176jzf-s_vfp
-          - arm_arm926ej-s
-          - arm_cortex-a15_neon-vfpv4
-          - arm_cortex-a5_vfpv4
-          - arm_cortex-a7
-          - arm_cortex-a7_neon-vfpv4
-          - arm_cortex-a8_vfpv3
-          - arm_cortex-a9
-          - arm_cortex-a9_neon
-          - arm_cortex-a9_vfpv3-d16
-          - arm_fa526
-          - arm_mpcore
-          - arm_xscale
-          - i386_pentium-mmx
-          - i386_pentium4
-          - mips64_octeonplus
-          - mips_24kc
-          - mips_4kec
-          - mips_mips32
-          - mipsel_24kc
-          - mipsel_24kc_24kf
-          - mipsel_74kc
-          - mipsel_mips32
-          - powerpc_464fp
-          - powerpc_8540
+          # # - arc_arc700
+          # # - arc_archs
+          # - arm_arm1176jzf-s_vfp
+          # - arm_arm926ej-s
+          # - arm_cortex-a15_neon-vfpv4
+          # - arm_cortex-a5_vfpv4
+          # - arm_cortex-a7
+          # - arm_cortex-a7_neon-vfpv4
+          # - arm_cortex-a8_vfpv3
+          # - arm_cortex-a9
+          # - arm_cortex-a9_neon
+          # - arm_cortex-a9_vfpv3-d16
+          # - arm_fa526
+          # - arm_mpcore
+          # - arm_xscale
+          # - i386_pentium-mmx
+          # - i386_pentium4
+          # - mips64_octeonplus
+          # - mips_24kc
+          # - mips_4kec
+          # - mips_mips32
+          # - mipsel_24kc
+          # - mipsel_24kc_24kf
+          # - mipsel_74kc
+          # - mipsel_mips32
+          # - powerpc_464fp
+          # - powerpc_8540
           - x86_64
     steps:
       - name: Checkout
@@ -54,18 +54,18 @@ jobs:
       - name: Build
         uses: openwrt/gh-action-sdk@v3
         env:
-          ARCH: ${{ matrix.arch }}${{ matrix.branch && format('-{0}', matrix.branch) || ''}}
+          ARCH: ${{ matrix.arch }}-${{ matrix.branch }}
           KEY_BUILD: ${{ secrets.KEY_BUILD }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.arch }}
+          name: ${{ matrix.branch }}-${{ matrix.arch }}
           path: bin/packages/${{ matrix.arch }}/action/*
 
 
   test:
-    name: Test for ${{ matrix.branch && format('{0}-', matrix.branch) || ''}}${{ matrix.arch }}
+    name: Test / ${{ matrix.branch }} / ${{ matrix.arch }}
     runs-on: ubuntu-latest
     needs: build
     if: ${{ !cancelled() }}
@@ -73,26 +73,24 @@ jobs:
       fail-fast: false
       matrix:
         branch:
-          - 18.06.7
-          - 19.07.9
-          - 21.02.2
-          # - openwrt-19.07
-          # - openwrt-21.02
+          - openwrt-19.07
+          - openwrt-21.02
           - master
+          # - snapshot
         arch:
-          - aarch64_cortex-a53
+          # - aarch64_cortex-a53
           - aarch64_generic
-          - arm_cortex-a15_neon-vfpv4
-          - arm_cortex-a9_vfpv3-d16
-          # - armvirt-32
-          # - armvirt-64
-          - i386_pentium-mmx
-          - i386_pentium4
-          # - malta-be
-          - mips_24kc
-          # - x86-64
-          # - x86-generic
-          # - x86-geode
+          # - arm_cortex-a15_neon-vfpv4
+          # - arm_cortex-a9_vfpv3-d16
+          # # - armvirt-32
+          # # - armvirt-64
+          # - i386_pentium-mmx
+          # - i386_pentium4
+          # # - malta-be
+          # - mips_24kc
+          # # - x86-64
+          # # - x86-generic
+          # # - x86-geode
           - x86_64
 
     steps:
@@ -102,7 +100,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with: 
-          name: ${{ matrix.arch }}
+          name: ${{ matrix.branch }}-${{ matrix.arch }}
 
       - name: Setup QEMU binfmt
         run: |
@@ -113,10 +111,10 @@ jobs:
         run: |
           docker run --rm \
             -v $GITHUB_WORKSPACE:/ci \
-            openwrtorg/rootfs:$TAG \
+            openwrt/rootfs:$TAG \
             /ci/test.sh
         env:
-          TAG: ${{ matrix.arch }}${{ matrix.branch && format('-{0}', matrix.branch) || ''}}
+          TAG: ${{ matrix.arch }}-${{ matrix.branch }}
 
 
   release:
