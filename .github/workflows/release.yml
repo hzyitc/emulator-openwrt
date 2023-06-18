@@ -1,5 +1,5 @@
 name: Auto release
-on: 
+on:
   push:
 
 
@@ -52,7 +52,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-          
+
       - name: Build
         uses: openwrt/gh-action-sdk@v5
         env:
@@ -103,7 +103,7 @@ jobs:
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
-        with: 
+        with:
           name: ${{ matrix.branch }}-${{ matrix.arch }}
 
       - name: Setup QEMU binfmt
@@ -128,12 +128,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-    
+
       - name: Download artifacts
         uses: actions/download-artifact@v2
-        with: 
+        with:
           path: artifacts/
-      
+
       - name: Release
         run: |
           time="${{ github.event.head_commit.timestamp }}"
@@ -168,10 +168,10 @@ jobs:
 
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-    
+
       - name: Download artifacts
         uses: actions/download-artifact@v3
-        with: 
+        with:
           path: gh-pages/
 
       - name: Update
@@ -188,9 +188,8 @@ jobs:
           git add .
           git commit -m "Add: page"
           echo "::endgroup::"
-      
+
       - name: Publish
         run: |
           cd gh-pages
           git push -f origin gh-pages
-          
