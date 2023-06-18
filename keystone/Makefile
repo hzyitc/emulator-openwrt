@@ -50,6 +50,9 @@ define Package/python3-keystone/description
   This package contains Python 3 bindings for the keystone library.
 endef
 
+# Openwrt 19.07 compatible
+Build/Compile=$(Py3Build/Compile)
+
 define Package/keystone/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libkeystone.so* $(1)/usr/lib/

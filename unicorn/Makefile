@@ -48,6 +48,9 @@ define Package/python3-unicorn/description
   This package contains Python 3 bindings for the unicorn library.
 endef
 
+# Openwrt 19.07 compatible
+Build/Compile=$(Py3Build/Compile)
+
 define Package/unicorn/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libunicorn.so* $(1)/usr/lib/

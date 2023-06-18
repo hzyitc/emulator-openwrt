@@ -28,6 +28,9 @@ define Package/python3-pyelftools/description
   pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
 endef
 
+# Openwrt 19.07 compatible
+Build/Compile=$(Py3Build/Compile)
+
 $(eval $(call Py3Package,python3-pyelftools))
 $(eval $(call BuildPackage,python3-pyelftools))
 $(eval $(call BuildPackage,python3-pyelftools-src))
