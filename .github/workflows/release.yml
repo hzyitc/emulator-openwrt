@@ -13,6 +13,8 @@ jobs:
         branch:
           - openwrt-19.07
           - openwrt-21.02
+          - openwrt-22.03
+          - openwrt-23.05
           - master
           # - snapshot
         arch:
@@ -75,6 +77,8 @@ jobs:
         branch:
           - openwrt-19.07
           - openwrt-21.02
+          - openwrt-22.03
+          - openwrt-23.05
           - master
           # - snapshot
         arch:
