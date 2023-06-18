@@ -154,40 +154,38 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: 'gh-pages'
-          ref: 'pages'
+          ref: 'gh-pages'
+          fetch-depth: 0
 
-      - name: Backup pages
+      - name: Configure the git user
         run: |
-          cp -ar gh-pages pages
-
-      - name: Prepare gh-pages
-        run: |
-          cd gh-pages
-          git checkout --orphan gh-pages
-          git rm -rf .
-
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Drop old versions
+        run: |
+          cd gh-pages
+          readarray -t old_version < <(git log --format='%h' -- "*/Packages" | tail -n +1)
+          GIT_SEQUENCE_EDITOR="sed -i '1 i break'" git rebase -i --root
+          for commit in "${old_version[@]}"; do
+            sed -i "/${commit}/d" .git/rebase-merge/git-rebase-todo
+          done
+          git rebase --continue
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
-          path: gh-pages/
+          path: bin/
 
-      - name: Update
+      - name: Copy contents
+        run: |
+          cp -avr bin/* gh-pages/
+
+      - name: Commit
         run: |
           cd gh-pages
-
-          echo "::group::Add artifacts"
           git add .
-          git commit -m "Add: artifacts"
-          echo "::endgroup::"
-
-          echo "::group::Add pages"
-          cp -avr ../pages/* ./
-          git add .
-          git commit -m "Add: page"
-          echo "::endgroup::"
+          git commit -m "Add packages"
 
       - name: Publish
         run: |
