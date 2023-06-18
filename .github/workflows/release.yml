@@ -165,7 +165,7 @@ jobs:
       - name: Drop old versions
         run: |
           cd gh-pages
-          readarray -t old_version < <(git log --format='%h' -- "*/Packages" | tail -n +1)
+          readarray -t old_version < <(git log --format='%h' -- "*/*/Packages" | tail -n +1)
           GIT_SEQUENCE_EDITOR="sed -i '1 i break'" git rebase -i --root
           for commit in "${old_version[@]}"; do
             sed -i "/${commit}/d" .git/rebase-merge/git-rebase-todo
@@ -175,11 +175,18 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
-          path: bin/
+          path: artifacts/
 
-      - name: Copy contents
+      - name: Reorganize structure
         run: |
-          cp -avr bin/* gh-pages/
+          for path in artifacts/*; do
+            name="${path##*/}"
+            version=$(echo "${name}" | cut -d'-' -f1)
+            arch=$(echo "${name}" | cut -d'-' -f2-)
+
+            mkdir -p "gh-pages/${version}/${arch}/"
+            mv -v "${path}/"* "gh-pages/${version}/${arch}/"
+          done
 
       - name: Commit
         run: |
