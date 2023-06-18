@@ -18,8 +18,7 @@ CMAKE_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
-# include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-include ../python3-crossver-package.mk
+include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 PYTHON3_PKG_SETUP_DIR:=bindings/python/
 PYTHON3_PKG_SETUP_VARS+= \
@@ -65,6 +64,6 @@ endef
 
 $(eval $(call BuildPackage,unicorn))
 
-$(eval $(call Py3CrossVerPackage,python3-unicorn))
+$(eval $(call Py3Package,python3-unicorn))
 $(eval $(call BuildPackage,python3-unicorn))
 $(eval $(call BuildPackage,python3-unicorn-src))
