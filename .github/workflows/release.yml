@@ -49,16 +49,16 @@ jobs:
           - x86_64
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
           
       - name: Build
-        uses: openwrt/gh-action-sdk@v3
+        uses: openwrt/gh-action-sdk@v5
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.branch }}
           KEY_BUILD: ${{ secrets.KEY_BUILD }}
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.branch }}-${{ matrix.arch }}
           path: bin/packages/${{ matrix.arch }}/action/*
@@ -95,10 +95,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with: 
           name: ${{ matrix.branch }}-${{ matrix.arch }}
 
@@ -147,7 +147,7 @@ jobs:
     if: ${{ !cancelled() }}
     steps:
       - name: Checkout pages
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: 'gh-pages'
           ref: 'pages'
@@ -166,7 +166,7 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
     
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with: 
           path: gh-pages/
 
