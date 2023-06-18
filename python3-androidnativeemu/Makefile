@@ -34,6 +34,9 @@ define Package/python3-androidnativeemu/description
   Allows you to partly emulate an Android native library.
 endef
 
+# Openwrt 19.07 compatible
+Build/Compile=$(Py3Build/Compile)
+
 # AndroidNativeEmu contains some Android libraries
 # So we need to skip denpendency check for libraries
 define CheckDependencies

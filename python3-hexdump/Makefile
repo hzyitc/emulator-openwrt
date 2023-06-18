@@ -32,6 +32,9 @@ define Package/python3-pyelftools/description
   Dump binary data to hex format and restore from there.
 endef
 
+# Openwrt 19.07 compatible
+Build/Compile=$(Py3Build/Compile)
+
 $(eval $(call Py3Package,python3-hexdump))
 $(eval $(call BuildPackage,python3-hexdump))
 $(eval $(call BuildPackage,python3-hexdump-src))
