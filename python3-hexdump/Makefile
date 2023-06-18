@@ -28,7 +28,7 @@ define Package/python3-hexdump
   DEPENDS:=+python3-light
 endef
 
-define Package/python3-pyelftools/description
+define Package/python3-hexdump/description
   Dump binary data to hex format and restore from there.
 endef
 
