@@ -15,6 +15,7 @@ AndroidNativeEmu for openwrt
 ```shell
 . /etc/os-release
 MAJOR_VERSION="$(echo "${VERSION_ID}" | grep -oE '[0-9]+\.[0-9]+' || echo "snapshot")"
-wget -O /etc/opkg/keys/5283357d535bca85 https://hzyitc.github.io/emulator-openwrt/5283357d535bca85
+wget -O /tmp/emulator-openwrt.key.pub https://hzyitc.github.io/emulator-openwrt/emulator-openwrt.key.pub
+opkg-key add /tmp/emulator-openwrt.key.pub
 echo "src/gz emulator https://hzyitc.github.io/emulator-openwrt/${MAJOR_VERSION}/${OPENWRT_ARCH}" >>/etc/opkg/customfeeds.conf
 ```
