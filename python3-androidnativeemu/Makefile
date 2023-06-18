@@ -19,8 +19,7 @@ PKG_LICENSE_FILES:=LICENSE
 
 # include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
-# include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
-include ../python3-crossver-package.mk
+include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
 
 define Package/python3-androidnativeemu
   SECTION:=lang
@@ -41,6 +40,6 @@ define CheckDependencies
   true
 endef
 
-$(eval $(call Py3CrossVerPackage,python3-androidnativeemu))
+$(eval $(call Py3Package,python3-androidnativeemu))
 $(eval $(call BuildPackage,python3-androidnativeemu))
 $(eval $(call BuildPackage,python3-androidnativeemu-src))
