@@ -13,9 +13,16 @@ AndroidNativeEmu for openwrt
 ## How to Use
 
 ```shell
-. /etc/os-release
-MAJOR_VERSION="$(echo "${VERSION_ID}" | grep -oE '[0-9]+\.[0-9]+' || echo "snapshot")"
+# Install key
 wget -O /tmp/emulator-openwrt.key.pub https://hzyitc.github.io/emulator-openwrt/emulator-openwrt.key.pub
 opkg-key add /tmp/emulator-openwrt.key.pub
+
+# Install feed
+. /etc/os-release
+MAJOR_VERSION="$(echo "${VERSION_ID}" | grep -oE '[0-9]+\.[0-9]+' || echo "snapshot")"
 echo "src/gz emulator https://hzyitc.github.io/emulator-openwrt/${MAJOR_VERSION}/${OPENWRT_ARCH}" >>/etc/opkg/customfeeds.conf
+
+# Install
+opkg update
+opkg install python3-androidnativeemu
 ```
