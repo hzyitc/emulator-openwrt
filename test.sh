@@ -10,7 +10,12 @@ opkg install file
 opkg install git git-http
 echo "::endgroup::"
 
+# Install key
 opkg-key add /ci/emulator-openwrt.key.pub
+
+# Install feed
+. /etc/os-release
+MAJOR_VERSION="$(echo "${VERSION_ID}" | grep -oE '[0-9]+\.[0-9]+' || echo "snapshot")"
 echo "src/gz emulator file:///ci/${MAJOR_VERSION}-${OPENWRT_ARCH}/" >>/etc/opkg/customfeeds.conf
 
 echo "::group::Install python3-androidnativeemu"
