@@ -4,8 +4,8 @@ set -e
 mkdir -p /var/lock/
 
 echo "::group::Install packages"
-opkg update
-# opkg install wget-ssl ca-bundle
+opkg update || true
+opkg install wget-ssl ca-bundle # For openwrt-19.07
 opkg install file
 opkg install git git-http
 echo "::endgroup::"
@@ -19,7 +19,7 @@ DIST="$(echo "openwrt-${VERSION_ID}" | grep -oE 'openwrt-[0-9]+\.[0-9]+' || echo
 echo "src/gz emulator file:///ci/${DIST}-${OPENWRT_ARCH}/" >>/etc/opkg/customfeeds.conf
 
 echo "::group::Install python3-androidnativeemu"
-opkg update
+opkg update || true
 opkg install python3-androidnativeemu
 echo "::endgroup::"
 
