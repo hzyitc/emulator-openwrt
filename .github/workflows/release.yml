@@ -15,11 +15,10 @@ jobs:
           - openwrt-22.03
           - openwrt-23.05
           - master
-          # - snapshot
         arch:
-          # - aarch64_cortex-a53
+          - aarch64_cortex-a53
           # - aarch64_cortex-a72
-          - aarch64_generic
+          # - aarch64_generic
           # # - arc_arc700
           # # - arc_archs
           # - arm_arm1176jzf-s_vfp
@@ -28,6 +27,7 @@ jobs:
           # - arm_cortex-a5_vfpv4
           # - arm_cortex-a7
           # - arm_cortex-a7_neon-vfpv4
+          # - arm_cortex-a7_vfpv4
           # - arm_cortex-a8_vfpv3
           # - arm_cortex-a9
           # - arm_cortex-a9_neon
@@ -47,6 +47,8 @@ jobs:
           # - mipsel_mips32
           # - powerpc_464fp
           # - powerpc_8540
+          # - powerpc_8548
+          # - riscv64_riscv64
           - x86_64
     steps:
       - name: Checkout
@@ -78,21 +80,10 @@ jobs:
           - openwrt-22.03
           - openwrt-23.05
           - master
-          # - snapshot
         arch:
-          # - aarch64_cortex-a53
-          - aarch64_generic
-          # - arm_cortex-a15_neon-vfpv4
+          - aarch64_cortex-a53
           # - arm_cortex-a9_vfpv3-d16
-          # # - armvirt-32
-          # # - armvirt-64
-          # - i386_pentium-mmx
-          # - i386_pentium4
-          # # - malta-be
           # - mips_24kc
-          # # - x86-64
-          # # - x86-generic
-          # # - x86-geode
           - x86_64
 
     steps:
