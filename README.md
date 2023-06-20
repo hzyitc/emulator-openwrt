@@ -19,8 +19,8 @@ opkg-key add /tmp/emulator-openwrt.key.pub
 
 # Install feed
 . /etc/os-release
-MAJOR_VERSION="$(echo "${VERSION_ID}" | grep -oE '[0-9]+\.[0-9]+' || echo "snapshot")"
-echo "src/gz emulator https://hzyitc.github.io/emulator-openwrt/${MAJOR_VERSION}/${OPENWRT_ARCH}" >>/etc/opkg/customfeeds.conf
+DIST="$(echo "openwrt-${VERSION_ID}" | grep -oE 'openwrt-[0-9]+\.[0-9]+' || echo "snapshot")"
+echo "src/gz emulator https://hzyitc.github.io/emulator-openwrt/${DIST}/${OPENWRT_ARCH}" >>/etc/opkg/customfeeds.conf
 
 # Install
 opkg update

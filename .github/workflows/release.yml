@@ -172,11 +172,16 @@ jobs:
         run: |
           for path in artifacts/*; do
             name="${path##*/}"
-            version=$(echo "${name}" | cut -d'-' -f1)
-            arch=$(echo "${name}" | cut -d'-' -f2-)
+            if [[ "${name}" == openwrt-* ]]; then
+              dist=$(echo "${name}" | cut -d'-' -f1-2)
+              arch=$(echo "${name}" | cut -d'-' -f3-)
+            else
+              dist=$(echo "${name}" | cut -d'-' -f1)
+              arch=$(echo "${name}" | cut -d'-' -f2-)
+            fi
 
-            mkdir -p "gh-pages/${version}/${arch}/"
-            mv -v "${path}/"* "gh-pages/${version}/${arch}/"
+            mkdir -p "gh-pages/${dist}/${arch}/"
+            mv -v "${path}/"* "gh-pages/${dist}/${arch}/"
           done
 
       - name: Commit
