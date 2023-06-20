@@ -17,7 +17,7 @@ opkg-key add /ci/emulator-openwrt.key.pub
 # Install feed
 . /etc/os-release
 DIST="$(echo "openwrt-${VERSION_ID}" | grep -oE 'openwrt-[0-9]+\.[0-9]+' || echo "snapshot")"
-echo "src/gz emulator file:///ci/${DIST}-${OPENWRT_ARCH}/" >>/etc/opkg/customfeeds.conf
+echo "src/gz emulator file:///ci/${DIST}-${OPENWRT_ARCH}" >>/etc/opkg/customfeeds.conf
 
 echo "::group::Install python3-androidnativeemu"
 opkg update || true
