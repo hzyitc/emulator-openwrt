@@ -15,6 +15,7 @@ PKG_LICENSE_FILES:=LICENSE
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 CMAKE_INSTALL:=1
+PYTHON3_PKG_FORCE_DISTUTILS_SETUP:=1
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -48,8 +49,15 @@ define Package/python3-unicorn/description
   This package contains Python 3 bindings for the unicorn library.
 endef
 
-# Openwrt 19.07 compatible
-Build/Compile=$(Py3Build/Compile)
+define Build/Compile
+	$(call Build/Compile/Default)
+	$(call Py3Build/Compile)
+endef
+
+define Build/Install
+	$(call Build/Install/Default)
+	$(call Py3Build/Compile)
+endef
 
 define Package/unicorn/install
 	$(INSTALL_DIR) $(1)/usr/lib

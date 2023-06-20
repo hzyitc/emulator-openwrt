@@ -17,6 +17,8 @@ PKG_MAINTAINER:=AeonLucid
 PKG_LICENSE:=GPL-3.0 License
 PKG_LICENSE_FILES:=LICENSE
 
+PYTHON3_PKG_FORCE_DISTUTILS_SETUP:=1
+
 # include $(TOPDIR)/feeds/packages/lang/python/pypi.mk
 include $(INCLUDE_DIR)/package.mk
 include $(TOPDIR)/feeds/packages/lang/python/python3-package.mk
