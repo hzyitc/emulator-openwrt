@@ -1,0 +1,153 @@
+Package: keystone
+Version: 0.9.2
+Depends: libc, libstdcpp6
+License: GPL-2.0 License
+Section: libs
+Architecture: x86_64
+Installed-Size: 1367003
+Filename: keystone_0.9.2_x86_64.ipk
+Size: 1307110
+SHA256sum: 7bc5197851f751bbad06ab2cac1a3fd7aab89c59beb1359724ba1cf2a33ff0c0
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+
+Package: python3-androidnativeemu-src
+Version: 2022-03-14-10da9bb9
+Depends: libc
+License: GPL-3.0 License
+Section: lang
+Architecture: x86_64
+Installed-Size: 30103
+Filename: python3-androidnativeemu-src_2022-03-14-10da9bb9_x86_64.ipk
+Size: 30861
+SHA256sum: 06c83e33fb60fea3a3551ade85a8603708060b83dcfd9a7973b744339d712f60
+Description:  Allows you to partly emulate an Android native library..
+ (Contains the Python3 sources for this package).
+
+Package: python3-androidnativeemu
+Version: 2022-03-14-10da9bb9
+Depends: libc, python3-light, python3-unicorn, python3-pyelftools, python3-hexdump, python3-keystone
+License: GPL-3.0 License
+Section: lang
+Architecture: x86_64
+Installed-Size: 53320
+Filename: python3-androidnativeemu_2022-03-14-10da9bb9_x86_64.ipk
+Size: 54175
+SHA256sum: ed649c2bc0a7941d18d6f2fbef6ebfe9faff13df0ca0b4b2f6018d714a0662fb
+Description:  Allows you to partly emulate an Android native library.
+
+Package: python3-hexdump-src
+Version: 3.3
+Depends: libc
+License: Public Domain
+Section: lang
+Architecture: x86_64
+Installed-Size: 5249
+Filename: python3-hexdump-src_3.3_x86_64.ipk
+Size: 6006
+SHA256sum: 71db543c5392fe7bce51a7ac15508fa1b4b96f109d945082e32d140572f357ff
+Description:  Dump binary data to hex format and restore from there..
+ (Contains the Python3 sources for this package).
+
+Package: python3-hexdump
+Version: 3.3
+Depends: libc, python3-light
+License: Public Domain
+Section: lang
+Architecture: x86_64
+Installed-Size: 7970
+Filename: python3-hexdump_3.3_x86_64.ipk
+Size: 8743
+SHA256sum: c15b37ef68b11b981cc2f33d0b8e7abe236d67c11b21bde359bd370cc38a3455
+Description:  Dump binary data to hex format and restore from there.
+
+Package: python3-keystone-src
+Version: 0.9.2
+Depends: libc
+License: GPL-2.0 License
+Section: lang
+Architecture: x86_64
+Installed-Size: 3973
+Filename: python3-keystone-src_0.9.2_x86_64.ipk
+Size: 4760
+SHA256sum: 108cf44df2f767b9a2ae66bbb3276d8b5fb2915a06820d16dd54a94fda0f31f9
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library..
+ (Contains the Python3 sources for this package).
+
+Package: python3-keystone
+Version: 0.9.2
+Depends: libc, keystone, python3-light, python3-ctypes, python3-distutils
+License: GPL-2.0 License
+Section: lang
+Architecture: x86_64
+Installed-Size: 6678
+Filename: python3-keystone_0.9.2_x86_64.ipk
+Size: 7497
+SHA256sum: c98ffce40e3ae262408b03a2c74fa6f321738c48827bcf6ae1fcd8fdfdf5ebe7
+Description:  Keystone is a lightweight multi-platform, multi-architecture assembler framework.
+ This package contains Python 3 bindings for the keystone library.
+
+Package: python3-pyelftools-src
+Version: 0.28
+Depends: libc
+License: Public Domain
+Section: lang
+Architecture: x86_64
+Installed-Size: 131625
+Filename: python3-pyelftools-src_0.28_x86_64.ipk
+Size: 132551
+SHA256sum: 5267272b7d3e105f4eab93ed48f7b8fef18c8adb729a7630739f25fb06400075
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details..
+ (Contains the Python3 sources for this package).
+
+Package: python3-pyelftools
+Version: 0.28
+Depends: libc, python3-light, python3-logging
+License: Public Domain
+Section: lang
+Architecture: x86_64
+Installed-Size: 170860
+Filename: python3-pyelftools_0.28_x86_64.ipk
+Size: 171608
+SHA256sum: f9bf81e1f7c6468607c9e0b8890e2f07e5414c41a702c0b61878f6f6e363027c
+Description:  pyelftools is a pure-Python library for parsing and analyzing ELF files and DWARF debugging information. See the User's guide for more details.
+
+Package: python3-unicorn-src
+Version: 1.0.3
+Depends: libc
+License: GPL-2.0 License
+Section: lang
+Architecture: x86_64
+Installed-Size: 20435
+Filename: python3-unicorn-src_1.0.3_x86_64.ipk
+Size: 20888
+SHA256sum: c5115b72f94e80ed27acccec726600cd97248ff1965076066964da4cd7d40693
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library..
+ (Contains the Python3 sources for this package).
+
+Package: python3-unicorn
+Version: 1.0.3
+Depends: libc, unicorn, python3-light, python3-ctypes, python3-distutils, python3-pkg-resources
+License: GPL-2.0 License
+Section: lang
+Architecture: x86_64
+Installed-Size: 32123
+Filename: python3-unicorn_1.0.3_x86_64.ipk
+Size: 28450
+SHA256sum: 7fbc3b648f74a0e7a52bfede594173d677a114a2cce7576b03e0036d27cc5e9d
+Description:  Allows you to partly emulate an Android native library.
+ This package contains Python 3 bindings for the unicorn library.
+
+Package: unicorn
+Version: 1.0.3
+Depends: libc
+License: GPL-2.0 License
+Section: libs
+Architecture: x86_64
+Installed-Size: 3144025
+Filename: unicorn_1.0.3_x86_64.ipk
+Size: 3113779
+SHA256sum: ccd24a18df1b1b9b30036603fd620e1d60bdce2da6449ed6393650c660d2e45d
+Description:  Allows you to partly emulate an Android native library.
+
