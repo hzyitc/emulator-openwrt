@@ -8,6 +8,7 @@ opkg update || true
 opkg install wget-ssl ca-bundle # For openwrt-19.07
 opkg install file
 opkg install git git-http
+opkg install python3-xml
 echo "::endgroup::"
 
 # Install key
